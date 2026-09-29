@@ -26,7 +26,7 @@ import com.example.finance_vura_aplication.ui.theme.DarkBlue
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun mainLayoutFinanzApp() {
+fun MainLayoutFinanzApp() {
 
     val navController = rememberNavController()
 
@@ -52,7 +52,7 @@ fun mainLayoutFinanzApp() {
             StaticSideMenu(
                 navController = navController,
                 items = menuItems,
-                modifier = Modifier.width(110.dp)
+                modifier = Modifier.width(70.dp)
             )
 
 

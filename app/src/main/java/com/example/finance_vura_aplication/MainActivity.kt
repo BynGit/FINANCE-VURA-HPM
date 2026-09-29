@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.graphics.Color
-import com.example.finance_vura_aplication.ui.layouts.mainLayoutFinanzApp
+import com.example.finance_vura_aplication.ui.layouts.MainLayoutFinanzApp
 
 
 class MainActivity : ComponentActivity() {
@@ -15,15 +15,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme {
                 Surface(color = Color.White) {
-                    mainLayoutFinanzApp()
+                    MainLayoutFinanzApp()
                 }
             }
         }
     }
 }
-
-
-
-
-
-
