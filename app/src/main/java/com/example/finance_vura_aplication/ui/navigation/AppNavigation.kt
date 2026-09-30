@@ -26,7 +26,7 @@ fun AppNavigation( navController: NavHostController) {
     ) {
         composable("Perfil") { PerfilScreen() }
         composable("Fotos") { FotosScreen() }
-        composable("Video") { VideoScreen("Pantalla de Video") }
+        composable("Video") { VideoScreen() }
         composable("Web") { WebScreen("Pantalla de Web") }
         composable("Acciones") { Accionescreen("Pantalla de Acciones") }
     }
