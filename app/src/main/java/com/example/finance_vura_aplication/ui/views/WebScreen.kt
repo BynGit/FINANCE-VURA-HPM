@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.finance_vura_aplication.ui.views
 
 import android.annotation.SuppressLint
@@ -162,7 +164,6 @@ fun WebScreen(title: String = "Pantalla de Web") {
 
         Spacer(modifier = Modifier.height(18.dp))
 
-        // CONTENEDOR VISTA WEB / IFRAME QUE CARGA LA URL DIGITADA SIN ERR_CACHE_MISS
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -173,7 +174,8 @@ fun WebScreen(title: String = "Pantalla de Web") {
             AndroidView(
                 factory = { context ->
                     WebView(context).apply {
-                        webViewClient = object : WebViewClient() {
+                        object : WebViewClient() {
+                            @Deprecated("Deprecated in Java")
                             @Suppress("OverridingDeprecatedMember")
                             override fun shouldOverrideUrlLoading(
                                 view: WebView?,
@@ -185,8 +187,7 @@ fun WebScreen(title: String = "Pantalla de Web") {
                                 }
                                 return true
                             }
-                        }
-                        // Ajustes para asegurar navegación fluida sin ERR_CACHE_MISS
+                        }.also { webViewClient = it }
                         settings.javaScriptEnabled = true
                         settings.domStorageEnabled = true
                         settings.cacheMode = WebSettings.LOAD_DEFAULT
